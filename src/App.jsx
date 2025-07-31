@@ -4,8 +4,7 @@ import ProjectPage from "./components/ProjectPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Projects from "./components/Projects";
-import AboutMe from "./components/AboutMe";
-import ContactTerminalForm from "./components/ContactTerminalForm";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
@@ -20,6 +19,7 @@ const App = () => {
         </Routes>
         <Footer />
       </div>
+      <Analytics />
     </>
   );
 };
