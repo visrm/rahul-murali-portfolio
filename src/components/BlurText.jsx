@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import { LazyMotion, domAnimation } from "motion/react";
+import * as m from "motion/react-m";
 
 const BlurText = ({ text, className }) => {
   const content = text?.trim().toString();
@@ -8,17 +9,24 @@ const BlurText = ({ text, className }) => {
   return (
     <>
       <div>
-        {words && words.map((word, index) => (
-          <motion.p
-            key={index}
-            initial={{ filter: "blur(10px)", opacity: 0, y: 12 }}
-            animate={{ filter: "blur(0)", opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2 * index, ease: "easeInOut" }}
-            className={`${classes} inline-block mr-1.5`}
-          >
-            {word}
-          </motion.p>
-        ))}
+        {words &&
+          words.map((word, index) => (
+            <LazyMotion features={domAnimation}>
+              <m.p
+                key={index}
+                initial={{ filter: "blur(8px)", opacity: 0, y: 12 }}
+                animate={{ filter: "blur(0)", opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.1 * index,
+                  ease: "backIn",
+                }}
+                className={`${classes} inline-block mr-1.5`}
+              >
+                {word}
+              </m.p>
+            </LazyMotion>
+          ))}
       </div>
     </>
   );

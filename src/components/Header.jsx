@@ -9,20 +9,11 @@ const Header = () => {
         Portfolio
       </p>
       <nav className="flex justify-center items-center p-2 h-16">
-        {/* <ul className="z-[1] max-w-full mx-4 grid grid-flow-col gap-4 sm:gap-6 lg:gap-8 font-medium font-sans leading-relaxed items-center list-none"></ul> */}
         <SlideTabs />
       </nav>
     </header>
   );
 };
-
-// export const SlideTabsExample = () => {
-//   return (
-//     <div className="bg-neutral-100 py-20">
-//       <SlideTabs />
-//     </div>
-//   );
-// };
 
 const SlideTabs = () => {
   const [position, setPosition] = useState({
@@ -72,7 +63,7 @@ const Tab = ({ children, setPosition }) => {
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer px-2 py-1 text-xs font-semibold uppercase mix-blend-difference md:px-4 md:py-1.5 md:text-sm"
+      className="relative z-10 block cursor-pointer px-2 py-1 text-xs font-semibold uppercase mix-blend-lighten md:px-4 md:py-1.5 md:text-sm"
     >
       {children}
     </li>
@@ -85,7 +76,7 @@ const Cursor = ({ position }) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-6 rounded-full bg-emerald-950 md:h-8"
+      className="absolute z-0 h-6 rounded-full bg-emerald-700/50 md:h-8"
     />
   );
 };

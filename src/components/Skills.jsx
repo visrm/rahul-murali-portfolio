@@ -14,7 +14,7 @@ const Skills = () => {
       >
         <div className="skills-grid grid gap-3 sm:gap-4 md:gap-6 mx-auto">
           <h2 className="relative p-2 text-3xl sm:text-4xl font-rye text-shadow-xs text-shadow-black font-medium sm:tracking-wide uppercase place-content-center cursor-pointer">
-            <span className="inline-block px-2">Technical Skills</span>
+            <span className="inline-block px-2 text-emerald-500">Technical Skills</span>
             <div className="absolute left-[30%] top-[25%] dark-green-circle-gradient rounded-full h-28 w-28 blur-2xl"></div>
             <div className="absolute hidden lg:block lg:top-10 lg:left-[75%] lg:h-10 opacity-75">
               <img src={"/3stars.svg"} alt="stars" />

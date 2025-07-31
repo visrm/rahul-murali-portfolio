@@ -23,7 +23,7 @@ const Projects = ({ count }) => {
   return (
     <>
       <section className="relative h-full min-h-fit w-full max-w-5xl lg:max-w-7xl mx-auto">
-        <h2 className="block px-2 text-3xl sm:text-4xl font-rye text-shadow-xs text-shadow-black font-medium sm:tracking-wide uppercase">
+        <h2 className="block px-2 mb-4 text-3xl sm:text-4xl font-rye text-shadow-xs text-shadow-black font-medium sm:tracking-wide uppercase">
           Projects
         </h2>
         <motion.article

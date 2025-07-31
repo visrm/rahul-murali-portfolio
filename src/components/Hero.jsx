@@ -3,11 +3,12 @@ import { useEffect, useRef, useState } from "react";
 import pfp_bg from "../assets/user_profile-bg.png";
 import pfp from "../assets/user_profile-fg.png";
 import BlurText from "./BlurText";
+import { FaFilePdf } from "react-icons/fa";
 
 export default function Hero() {
   return (
     <>
-      <section className="hero relative p-0 min-h-[90svh] md:min-h-[100vh] h-full w-full text-base-200 flex flex-col sm:flex-row flex-nowrap justify-start overflow-hidden">
+      <section className="hero relative p-0 min-h-[80svh] md:min-h-[80lvh] lg:min-h-[90vh] h-full w-full text-base-200 flex flex-col sm:flex-row flex-nowrap justify-start overflow-hidden">
         <article className="max-w-full md:w-10/12 select-none">
           <div className="hero-overlay bg-blend-overlay" />
           <div className="relative hero-content flex-col h-full lg:flex-row flex-nowrap justify-start mx-auto md:m-5">
@@ -34,12 +35,22 @@ export default function Hero() {
                   I develop websites and web applications.
                 </h4>
               </hgroup>
-              <div className="flex py-4 sm:py-2 max-w-[32rem] text-sm text-white/50 text-shadow-xs text-shadow-black font-light tracking-wide">
+              <div className="flex flex-col py-4 sm:py-2 max-w-[32rem] text-sm text-white/50 text-shadow-xs text-shadow-black font-light tracking-wide">
                 <BlurText
                   text={
                     "This portfolio showcases Rahul's projects, where you'll see his problem-solving approach and ability to translate concepts into functional applications."
                   }
                 />
+                <a
+                  className="flex flex-row flex-nowrap items-center gap-2 w-fit h-fit border border-emerald-500 rounded-full py-1 px-4 mt-4 text-emerald-500 uppercase font-mono font-bold bg-black/10 hover:bg-white/5 transition-colors duration-300"
+                  href={"../assets/Rahul~Murali-Resume.pdf"}
+                  target="_blank"
+                  type="application/pdf"
+                  download={"Rahul~Murali-Resume.pdf"}
+                >
+                  <FaFilePdf className="h-4 w-4" />
+                  resume
+                </a>
               </div>
             </div>
           </div>
