@@ -78,7 +78,7 @@ const ProjectPage = () => {
                     {data[0].tech_stack.map((tech, id) => (
                       <span
                         key={`tech${id}`}
-                        className="p-1 px-2 text-xs sm:text-sm rounded-sm font-mono font-normal bg-emerald-700/50 border border-emerald-700 cursor-pointer text-[#fff]"
+                        className="p-1 px-2 text-xs sm:text-sm rounded-sm font-mono font-normal bg-emerald-700/50 border border-emerald-700 cursor-pointer select-all text-[#fff]"
                       >
                         {tech}
                       </span>

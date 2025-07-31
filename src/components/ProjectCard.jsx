@@ -1,21 +1,11 @@
 import { BsGlobe2 } from "react-icons/bs";
 import { MdInfoOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
 
 export default function ProjectCard({ projectData }) {
   return (
     <>
-      <motion.div
-        className="cards sm:max-w-[380px] rounded-lg"
-        initial={{ x: -25, scale: 0.95, opacity: 0 }}
-        whileInView={{ x: 0, scale: 1, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          type: "spring",
-          duration: 0.3,
-        }}
-      >
+      <div className="cards sm:max-w-[380px] rounded-lg">
         <Link to={`/project/${projectData?.id}`}>
           <figure className="cards-fig">
             <img
@@ -53,7 +43,7 @@ export default function ProjectCard({ projectData }) {
             </button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 }

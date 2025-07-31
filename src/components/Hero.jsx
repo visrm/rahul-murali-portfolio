@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <>
       <section className="hero relative p-0 min-h-[90svh] md:min-h-[100vh] h-full w-full text-base-200 flex flex-col sm:flex-row flex-nowrap justify-start overflow-hidden">
-        <article className="max-w-full md:w-10/12">
+        <article className="max-w-full md:w-10/12 select-none">
           <div className="hero-overlay bg-blend-overlay" />
           <div className="relative hero-content flex-col h-full lg:flex-row flex-nowrap justify-start mx-auto md:m-5">
             <div className="absolute block left-[10%] top-[0%] dark-green-circle-gradient rounded-full h-72 w-72 blur-[72px] -z-20"></div>

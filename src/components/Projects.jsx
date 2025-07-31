@@ -1,6 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "../utils/user-data.js";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 const Projects = ({ count }) => {
   const [projectItems, setProjectItems] = useState(projectsData);
@@ -22,15 +23,25 @@ const Projects = ({ count }) => {
   return (
     <>
       <section className="relative h-full min-h-fit w-full max-w-5xl lg:max-w-7xl mx-auto">
-        <h2 className="px-2 text-3xl sm:text-4xl font-rye text-shadow-xs text-shadow-black font-medium sm:tracking-wide uppercase">
+        <h2 className="block px-2 text-3xl sm:text-4xl font-rye text-shadow-xs text-shadow-black font-medium sm:tracking-wide uppercase">
           Projects
         </h2>
-        <article className="px-4 py-4 w-full max-full" id="projects">
+        <motion.article
+          className="px-4 py-4 w-full max-full"
+          id="projects"
+          initial={{ x: -150, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "tween",
+            duration: 0.5,
+          }}
+        >
           {projectItems &&
             projectItems.map((prj) => (
               <ProjectCard key={`p${prj.id}`} projectData={prj} />
             ))}
-        </article>
+        </motion.article>
       </section>
     </>
   );

@@ -16,40 +16,75 @@ const Footer = () => {
         </Link>
         {/* <Link className="link link-hover">Press kit</Link> */}
       </nav>
+
       <nav>
         <div className="grid grid-flow-col gap-6">
-          <a>
+          <a
+            href="https://www.linkedin.com/in/rahulmurali852/"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="relative group"
+          >
             <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
+              fill="currentColor"
               viewBox="0 0 24 24"
-              className="fill-current"
             >
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+              <path
+                fill-rule="evenodd"
+                d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
+                clip-rule="evenodd"
+              />
+              <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
             </svg>
+            <div class="absolute select-all top-[125%] left-[150%] transform -translate-x-1/2 mb-2 w-max px-2 py-1 text-xs font-mono bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500">
+              rahulmurali852
+            </div>
           </a>
-          <a>
+          <a
+            href="https://github.com/visrm/"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="relative group"
+          >
             <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
+              fill="currentColor"
               viewBox="0 0 24 24"
-              className="fill-current"
             >
-              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+              <path
+                fill-rule="evenodd"
+                d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
+                clip-rule="evenodd"
+              />
             </svg>
+            <div class="absolute select-all top-[125%] left-[150%] transform -translate-x-1/2 mb-2 w-max px-2 py-1 text-xs font-mono bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500">
+              visrm
+            </div>
           </a>
-          <a>
+          <a className="relative group">
             <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
+              fill="currentColor"
               viewBox="0 0 24 24"
-              className="fill-current"
             >
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+              <path d="M18.942 5.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.586 11.586 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3 17.392 17.392 0 0 0-2.868 11.662 15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.638 10.638 0 0 1-1.706-.83c.143-.106.283-.217.418-.331a11.664 11.664 0 0 0 10.118 0c.137.114.277.225.418.331-.544.328-1.116.606-1.71.832a12.58 12.58 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM8.678 14.813a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.929 1.929 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
             </svg>
+            <div class="absolute select-all top-[125%] left-[150%] transform -translate-x-1/2 mb-2 w-max px-2 py-1 text-xs font-mono bg-gray-700 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500">
+              vyali#000
+            </div>
           </a>
         </div>
       </nav>

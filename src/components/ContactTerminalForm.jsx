@@ -80,7 +80,7 @@ const ContactTerminalForm = () => {
           viewport={{ once: true }}
           transition={{
             type: "spring",
-            duration: "0.3",
+            duration: "0.5",
           }}
         >
           {/* Terminal header */}

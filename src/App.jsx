@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   return (
     <>
-      <div className="block h-full w-full max-w-full min-h-full scroll-smooth">
+      <div className="relative block h-full w-full max-w-full min-h-full scroll-smooth">
         <Header />
         <br />
         <Routes>
