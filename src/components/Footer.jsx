@@ -3,7 +3,7 @@ import "../App.css";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center space-y-0 gap-y-4 sm:gap-y-6 bg-emerald-950 text-base-content rounded px-6 md:px-8 py-4 md:py-6 mt-6 sm:mt-8 md:mt-10">
+    <footer className="footer footer-horizontal footer-center space-y-0 gap-y-4 sm:gap-y-6 bg-emerald-950 rounded px-6 md:px-8 py-4 md:py-6 mt-6 sm:mt-8 md:mt-10">
       <nav className="grid grid-flow-col gap-4 text-sm md:text-base">
         <a className="link link-hover" href="#about-me">
           About me
