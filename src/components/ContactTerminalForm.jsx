@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { SiTicktick } from "react-icons/si";
 import { VscError } from "react-icons/vsc";
 import { motion } from "motion/react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const InputPrefixText = ({ input, inputId }) => {
   return (
@@ -21,16 +23,19 @@ const ContactTerminalForm = () => {
   const [info, setInfo] = useState({
     emailId: "",
     name: "",
-    description: "",
+    subject: "",
+    message: "",
   });
   const [submission, setSubmission] = useState({
     emailSubmitted: false,
     nameSubmitted: false,
-    descriptionSubmitted: false,
+    subjectSubmitted: false,
+    messageSubmitted: false,
     final: false,
   });
   const [error, setError] = useState({ isError: false, errorText: "" });
 
+  // To validate email
   const validateEmail = (email) => {
     let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let result = emailRegex.test(email);
@@ -43,28 +48,49 @@ const ContactTerminalForm = () => {
   };
 
   useEffect(() => {
-    setSubmission({
-      emailSubmitted: false,
-      nameSubmitted: false,
-      descriptionSubmitted: false,
-      final: false,
-    });
+    // resets on page refresh
+    ResetFn();
   }, []);
 
   const HandleInputChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
 
+  const sendEmail = async (details) => {
+    // Initialise using the public key
+    emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
+    await emailjs
+      .send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        //Provide the template variables
+        {
+          email: details.emailId,
+          name: details.name,
+          subject: details.subject,
+          message: details.message,
+        }
+      )
+      .then((response) => {
+        console.log({ status: response.status, message: response.text });
+        toast.success({ message: "Email sent successfully!!" });
+        ResetFn();
+      })
+      .catch((error) => console.log(error));
+  };
+
   const ResetFn = () => {
     setInfo({
       emailId: "",
       name: "",
-      description: "",
+      subject: "",
+      message: "",
     });
     setSubmission({
       emailSubmitted: false,
       nameSubmitted: false,
-      descriptionSubmitted: false,
+      subjectSubmitted: false,
+      messageSubmitted: false,
       final: false,
     });
     setError({ isError: false, errorText: "" });
@@ -199,52 +225,94 @@ const ContactTerminalForm = () => {
                 </div>
               )}
 
-              {/* THIRD BLOCK : ASKS FOR DESCRIPTION OF SUBJECT WITH WHICH THE USER NEEDS HELP */}
+              {/* THIRD BLOCK : ASKS FOR USERS NAME */}
               {submission.nameSubmitted && (
                 <div id="third-terminal-block">
                   <p className="font-mono">
-                    Great. So, what can I{" "}
-                    <span className="text-emerald-500">help you</span> with?
+                    What is{" "}
+                    <span className="text-emerald-500">the subject?</span>
                   </p>
-                  {!submission.descriptionSubmitted && (
+                  {!submission.subjectSubmitted && (
+                    <form
+                      autoComplete="name"
+                      className="flex flex-row"
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        setSubmission({
+                          ...submission,
+                          subjectSubmitted: true,
+                        });
+                      }}
+                    >
+                      <InputPrefixText input={"Subject"} inputId={"subject"} />
+                      <input
+                        id="subject"
+                        name="subject"
+                        className="focus:outline-0 border-0 w-full max-w-full caret-emerald-500"
+                        onChange={HandleInputChange}
+                        maxLength={"100ch"}
+                      />
+                    </form>
+                  )}
+                  {submission.subjectSubmitted && (
+                    <p
+                      className={`flex flex-row flex-nowrap items-center font-mono text-emerald-500 gap-2 ${
+                        !info.subject && "hidden"
+                      }`}
+                    >
+                      <SiTicktick className="h-4 w-4" />
+                      <span>{info.subject}</span>
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {/* FOURTH BLOCK : ASKS FOR MESSAGE FROM THE USER */}
+              {submission.subjectSubmitted && (
+                <div id="fourth-terminal-block">
+                  <p className="font-mono">
+                    Great. Give me a brief{" "}
+                    <span className="text-emerald-500">description</span> of it-
+                  </p>
+                  {!submission.messageSubmitted && (
                     <form
                       className="flex flex-row"
                       onSubmit={(e) => {
                         e.preventDefault();
                         setSubmission({
                           ...submission,
-                          descriptionSubmitted: true,
+                          messageSubmitted: true,
                         });
                       }}
                     >
                       <InputPrefixText
                         input={"Description"}
-                        inputId={"description"}
+                        inputId={"message"}
                       />
                       <input
-                        id="description"
-                        name="description"
+                        id="message"
+                        name="message"
                         className="focus:outline-0 border-0 w-full max-w-full caret-emerald-500"
                         onChange={HandleInputChange}
                         maxLength={"250ch"}
                       />
                     </form>
                   )}
-                  {submission.descriptionSubmitted && (
+                  {submission.messageSubmitted && (
                     <p
                       className={`flex flex-row flex-nowrap items-center font-mono text-emerald-500 gap-2 ${
-                        !info.description && "hidden"
+                        !info.message && "hidden"
                       }`}
                     >
                       <SiTicktick className="h-4 w-4" />
-                      <span>{info.description}</span>
+                      <span>{info.message}</span>
                     </p>
                   )}
                 </div>
               )}
 
               {/* FOURTH BLOCK : ASKS FOR USERS CONFIRMATION OF PROVIDED DETAIL, BEFORE FINAL SUBMIT */}
-              {submission.descriptionSubmitted && (
+              {submission.messageSubmitted && (
                 <div
                   id="fourth-terminal-block"
                   className="flex flex-col flex-nowrap gap-1"
@@ -264,10 +332,12 @@ const ContactTerminalForm = () => {
                       {info.name}
                     </li>
                     <li className="list-item list-inside">
-                      <span className="text-emerald-500 mr-1">
-                        Description:
-                      </span>
-                      {info.description}
+                      <span className="text-emerald-500 mr-1">Subject:</span>
+                      {info.subject}
+                    </li>
+                    <li className="list-item list-inside">
+                      <span className="text-emerald-500 mr-1">message:</span>
+                      {info.message}
                     </li>
                   </ul>
 
@@ -275,17 +345,16 @@ const ContactTerminalForm = () => {
                     Is this Correct (Y/N)?
                     <div className="flex gap-2 mt-2">
                       <button
-                        className="btn-xs border px-1"
-                        type="submit"
+                        className="btn-xs border px-1 hover:scale-110 transition-transform duration-300"
                         onClick={(e) => {
                           e.preventDefault();
+                          sendEmail(info);
                         }}
                       >
                         Yes! Submit
                       </button>
                       <button
-                        className="btn-xs border px-1"
-                        type="submit"
+                        className="btn-xs border px-1 hover:scale-110 transition-transform duration-300"
                         onClick={(e) => {
                           e.preventDefault();
                           ResetFn();

@@ -8,7 +8,7 @@ import { FaFilePdf } from "react-icons/fa";
 export default function Hero() {
   return (
     <>
-      <section className="hero relative p-0 min-h-[80svh] md:min-h-[80lvh] lg:min-h-[90vh] h-full w-full text-base-200 flex flex-col sm:flex-row flex-nowrap justify-start overflow-hidden">
+      <section className="hero relative p-0 min-h-[90svh] md:min-h-[90lvh] lg:min-h-[90vh] h-full w-full text-base-200 flex flex-col sm:flex-row flex-nowrap justify-start overflow-hidden">
         <article className="max-w-full md:w-10/12 select-none">
           <div className="hero-overlay bg-blend-overlay" />
           <div className="relative hero-content flex-col h-full lg:flex-row flex-nowrap justify-start mx-auto md:m-5">

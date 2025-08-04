@@ -13,7 +13,7 @@ const BlurText = ({ text, className }) => {
           words.map((word, index) => (
             <LazyMotion features={domAnimation}>
               <m.p
-                key={index}
+                key={`bl-text${index}`}
                 initial={{ filter: "blur(8px)", opacity: 0, y: 12 }}
                 animate={{ filter: "blur(0)", opacity: 1, y: 0 }}
                 transition={{

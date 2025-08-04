@@ -13,8 +13,8 @@ const Home = () => {
       <main className="block mx-auto h-full min-h-[90svh] md:min-h-[90vh] w-full max-w-full text-center">
         <section className="relative flex flex-col flex-nowrap justify-center items-center gap-2 sm:gap-3 lg:gap-4 overflow-hidden">
           <Hero />
-          <div className="absolute hidden lg:block lg:top-[16%] left-[35%] lg:h-56 text-white/83 opacity-75">
-            <img src={BgArrow} alt="arrow-down" />
+          <div className="absolute hidden lg:block lg:top-[16%] left-[35%] lg:h-56">
+            <img src={BgArrow} alt="arrow-down" className="block text-white/83 opacity-75"/>
           </div>
           <AboutMe />
           <div className="block my-2 sm:my-4 md:my-6">
