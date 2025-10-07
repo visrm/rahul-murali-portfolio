@@ -58,7 +58,7 @@ const ProjectPage = () => {
                 </div>
 
                 {data[0].description.length > 0 && (
-                  <div className="block text-xs sm:text-sm text-left w-full max-w-full my-2">
+                  <div className="block text-sm sm:text-base text-left w-full max-w-full my-2">
                     {data[0].description.map((para, id) => (
                       <p
                         key={`pr${id}`}
@@ -72,7 +72,7 @@ const ProjectPage = () => {
 
                 {data[0].tech_stack.length > 0 && (
                   <div className="flex flex-row flex-wrap w-full gap-2 max-w-full my-2 justify-start items-center">
-                    <p className="text-base font-normal mr-1 uppercase tracking-wide">
+                    <p className="text-base sm:text-lg font-normal mr-1 uppercase tracking-wide">
                       Technology Stack :
                     </p>
                     {data[0].tech_stack.map((tech, id) => (
@@ -88,10 +88,10 @@ const ProjectPage = () => {
 
                 {data[0].problem_soln.length > 0 && (
                   <div className="my-2">
-                    <p className="block text-left text-base font-normal mb-1 uppercase tracking-wide">
+                    <p className="block text-left text-base sm:text-lg font-normal mb-1 uppercase tracking-wide">
                       Problem-solution
                     </p>
-                    <div className="block text-xs sm:text-sm text-left w-full max-w-full">
+                    <div className="block text-sm sm:text-base text-left w-full max-w-full">
                       {data[0].problem_soln.map((para, id) => (
                         <p
                           key={`pbsol-pr${id}`}
@@ -106,10 +106,10 @@ const ProjectPage = () => {
 
                 {data[0].contribution.length > 0 && (
                   <div className="my-2">
-                    <p className="block text-left text-base font-normal mb-1 uppercase tracking-wide">
+                    <p className="block text-left text-base sm:text-lg font-normal mb-1 uppercase tracking-wide">
                       Contribution
                     </p>
-                    <div className="block text-xs sm:text-sm text-left w-full max-w-full ml-4 list-disc">
+                    <div className="block text-sm sm:text-base text-left w-full max-w-full ml-4 list-disc">
                       {data[0].contribution.map((list, id) => (
                         <p
                           key={`ctb-${id}`}
@@ -124,10 +124,10 @@ const ProjectPage = () => {
 
                 {data[0].hurdles.length > 0 && (
                   <div>
-                    <p className="block text-left text-base font-normal mb-1 uppercase tracking-wide">
+                    <p className="block text-left text-base sm:text-lg font-normal mb-1 uppercase tracking-wide">
                       Technical Hurdle
                     </p>
-                    <div className="flex flex-col flex-nowrap text-xs sm:text-sm text-left w-full max-w-full">
+                    <div className="flex flex-col flex-nowrap text-sm sm:text-base text-left w-full max-w-full">
                       {data[0].hurdles.map((hurdle, id) => (
                         <div
                           key={`hdl${id}`}
@@ -164,10 +164,10 @@ const ProjectPage = () => {
 
                 {data[0].impact.length > 0 && (
                   <div className="my-2">
-                    <p className="block text-left text-base font-normal mb-1 uppercase tracking-wide">
+                    <p className="block text-left text-base sm:text-lg font-normal mb-1 uppercase tracking-wide">
                       Result/Impact
                     </p>
-                    <div className="block text-xs sm:text-sm text-left w-full max-w-full ml-4 list-disc">
+                    <div className="block text-sm sm:text-base text-left w-full max-w-full ml-4 list-disc">
                       {data[0].impact.map((list, id) => (
                         <p
                           key={`ctb-${id}`}

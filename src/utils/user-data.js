@@ -68,7 +68,11 @@ export const projectsData = [
   {
     id: 7,
     title: "Quick Quiz Website",
-    description: [],
+    description: [
+      "Welcome to the Simple Quiz! 🧠 This project is a straightforward, interactive web application built exclusively with the core web fundamentals:",
+      "HTML for structure, CSS for styling and visual appeal, and JavaScript for dynamic functionality and quiz logic.",
+      "It demonstrates how these essential technologies work together to create an engaging user experience, from presenting questions and tracking scores to providing instant feedback without relying on external libraries or frameworks. It's a pure, practical example of front-end development.",
+    ],
     problem_soln: [],
     contribution: [],
     tech_stack: ["HTML5", "CSS3", "JavaScript"],
@@ -132,7 +136,10 @@ export const projectsData = [
   {
     id: 4,
     title: "Javascript DrumKit",
-    description: ["A Vanilla JavaScript Drum-Kit using key inputs."],
+    description: [
+      "This project is an exciting, hands-on demonstration of Vanilla JavaScript (meaning no libraries or frameworks) combined with fundamental web technologies. It creates a virtual Drum Kit that users can play directly using their computer's keyboard inputs. 🥁",
+      "It works by using JavaScript to listen for key presses (like pressing 'A', 'S', 'D', etc.), then dynamically triggering the corresponding HTML Audio element to play a drum sound (like a snare or a kick drum). CSS handles the visual transformation of the drum pad elements on the screen, providing immediate visual feedback when a key is hit, making it a highly responsive and engaging introduction to event listeners and audio manipulation in the browser.",
+    ],
     problem_soln: [],
     contribution: [],
     tech_stack: ["HTML5", "CSS3", "JavaScript"],
