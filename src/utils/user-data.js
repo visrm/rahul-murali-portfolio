@@ -63,7 +63,7 @@ export const projectsData = [
     impact: [],
     source_code: "",
     img_url: CookHouse,
-    web_url: "https://cookhouse.onrender.com/",
+    web_url: "https://cook-house.vercel.app/",
   },
   {
     id: 7,
