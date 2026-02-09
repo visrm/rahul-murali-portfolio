@@ -6,7 +6,7 @@ export default function ProjectCard({ projectData }) {
   return (
     <>
       <div className="cards sm:max-w-[380px] rounded-lg">
-        <Link to={`/project/${projectData?.id}`}>
+        <Link to={`/projects/${projectData?.id}`}>
           <figure className="cards-fig">
             <img
               alt="Project thumbnail"
