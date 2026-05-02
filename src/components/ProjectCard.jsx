@@ -20,7 +20,7 @@ export default function ProjectCard({ projectData }) {
         </Link>
         <div className="flex flex-col flex-nowrap justify-center py-2 gap-0.5 sm:gap-1 mb-2 sm:mb-4">
           <p className="cards-desc pt-1 text-lg sm:text-base text-center max-h-[80%] w-full max-w-[90%] sm:max-w-[95%] truncate">
-            <Link to={`/project/${projectData?.id}`}>{projectData.title}</Link>
+            <Link to={`/projects/${projectData?.id}`}>{projectData.title}</Link>
           </p>
           <div className="flex flex-row flex-wrap gap-2">
             <button className="cards-button text-sm sm:text-xs font-medium">
@@ -35,7 +35,7 @@ export default function ProjectCard({ projectData }) {
             </button>
             <button className="cards-button text-sm sm:text-xs font-medium">
               <Link
-                to={`/project/${projectData?.id}`}
+                to={`/projects/${projectData?.id}`}
                 className="flex flex-row justify-center items-center gap-1"
               >
                 <MdInfoOutline className="h-5 w-5 my-auto" /> <span>info</span>
